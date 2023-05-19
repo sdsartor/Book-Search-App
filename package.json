@@ -13,13 +13,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.21.8",
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.14",
-    "@apollo/react-hooks": "^4.0.0",
-    "apollo-server-express": "^2.15.1",
-    "graphql": "^15.8.0",
     "jsonwebtoken": "^9.0.0"
   }
 }
