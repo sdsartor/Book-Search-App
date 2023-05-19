@@ -6,9 +6,9 @@ This page was created to show off different books a be able to add them to an ac
 
 ## Demo
 
-### Non-React design
-
 ### React Deployed App
+![Untitled_ May 19, 2023 11_37 AM](https://github.com/sdsartor/Book-Search-App/assets/116858656/c2e088c4-ae32-4e4e-9c1e-4db9aecfc695)
+
 
 ## Installation
 
