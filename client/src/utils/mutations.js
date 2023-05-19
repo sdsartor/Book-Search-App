@@ -1,6 +1,4 @@
-import gql from "graphql-tag";
-
-export const GET_ME = gql;
+export { gql } from 'apollo-server-express';
 
 export const log_in = gql`
   mutation login($email: string!, $password: string!) {

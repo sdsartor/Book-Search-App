@@ -10,7 +10,7 @@ import {
 import { useMutation } from '@apollo/client';
 
 import Auth from '../utils/auth';
-// import { saveBook, searchGoogleBooks } from '../utils/API';
+import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 import { save_Book } from '../utils/mutations';
 
@@ -40,9 +40,7 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
-        );
+      const response = await searchGoogleBooks(searchInput);
     
 
       if (!response.ok) {
@@ -79,11 +77,12 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
-
-      if (!response.ok) {
+      const response = await saveBook({
+        variables: {input: bookToSave }
+        });
+      if (!response) {
         throw new Error('something went wrong!');
-      }
+      };
 
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
